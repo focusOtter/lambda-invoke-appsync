@@ -1,4 +1,5 @@
 # AWS CDK: Lambda to AppSync Integration
+![lambda-to-appsync](https://github.com/focusOtter/lambda-invoke-appsync/assets/5106417/f5eebaa4-a342-4f62-b806-614063282b13)
 
 Sometimes you want to call an AppSync API in a Lambda function. A real-world use case is when a customer makes a [payment with Stripe and you want to fire a webhook](https://github.com/focusOtter/stripe-webhook-example). Another use case in when an image is upload to an S3 bucket and you want to perform some additional processing.
 
