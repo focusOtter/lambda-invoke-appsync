@@ -1,6 +1,6 @@
 # AWS CDK Lambda AppSync Integration Project
 
-Sometimes you want to call an AppSync API in a Lambda function. A real-world use case is when a customer makes a p[ayment with Stripe and you want to fire a webhook](https://github.com/focusOtter/stripe-webhook-example). Another use case in when an image is upload to an S3 bucket and you want to perform some additional processing.
+Sometimes you want to call an AppSync API in a Lambda function. A real-world use case is when a customer makes a [payment with Stripe and you want to fire a webhook](https://github.com/focusOtter/stripe-webhook-example). Another use case in when an image is upload to an S3 bucket and you want to perform some additional processing.
 
 This repository contains a project setup using AWS Cloud Development Kit (CDK) for a serverless integration between AWS Lambda and AWS AppSync. The setup enables a Lambda function, written in TypeScript, to call an AppSync GraphQL API using IAM credentials for authentication.
 
