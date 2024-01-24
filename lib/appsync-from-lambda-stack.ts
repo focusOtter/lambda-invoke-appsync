@@ -8,33 +8,22 @@ export class AppsyncFromLambdaStack extends cdk.Stack {
 		super(scope, id, props)
 		const appName = 'lambda-to-appsync-example'
 
-		// Create the services
+		//* Create the services
 
 		const invokeAppSyncFunc = createInvokeAppSyncFunc(this, {
 			appName,
-			account: this.account,
-			region: this.region,
 		})
 
 		const appSyncAPI = createAppSyncAPI(this, {
 			appName,
-			invokeAppSyncFunc: invokeAppSyncFunc.invokeAppSyncFunc,
+			invokeAppSyncFunc: invokeAppSyncFunc,
 		})
 
-		// Add any additional permissions/envVars
+		//* Add any additional permissions/envVars
 
-		invokeAppSyncFunc.invokeAppSyncFunc.addEnvironment('REGION', this.region)
-		invokeAppSyncFunc.invokeAppSyncFunc.addEnvironment(
-			'APPSYNC_API_URL',
-			appSyncAPI.graphqlUrl
-		)
+		invokeAppSyncFunc.addEnvironment('REGION', this.region)
+		invokeAppSyncFunc.addEnvironment('APPSYNC_API_URL', appSyncAPI.graphqlUrl)
 
-		appSyncAPI.grantMutation(invokeAppSyncFunc.invokeAppSyncFunc)
-
-		// Log the Lambda function URL once it's deployed
-
-		new cdk.CfnOutput(this, 'invokeAppSyncFuncURL', {
-			value: invokeAppSyncFunc.invokeAppSyncFuncURL,
-		})
+		appSyncAPI.grantMutation(invokeAppSyncFunc)
 	}
 }

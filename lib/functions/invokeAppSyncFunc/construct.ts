@@ -5,8 +5,6 @@ import * as path from 'path'
 
 type InvokeAppSyncFuncProps = {
 	appName: string
-	region: string
-	account: string
 }
 
 export const createInvokeAppSyncFunc = (
@@ -24,9 +22,5 @@ export const createInvokeAppSyncFunc = (
 		}
 	)
 
-	const invokeAppSyncFuncURL = invokeAppSyncFunc.addFunctionUrl({
-		authType: FunctionUrlAuthType.NONE,
-	})
-
-	return { invokeAppSyncFunc, invokeAppSyncFuncURL: invokeAppSyncFuncURL.url }
+	return invokeAppSyncFunc
 }
