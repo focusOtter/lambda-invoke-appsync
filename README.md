@@ -67,6 +67,13 @@ The project demonstrates a secure and scalable pattern for invoking GraphQL muta
 ### Usage
 
 After deploying the stack, you can invoke the Lambda function to test the `broadcastMessage` mutation on the AppSync API. The Lambda function will use the `appsyncAuthUtil.ts` utility to sign the request with IAM credentials.
+<img width="1874" alt="image" src="https://github.com/focusOtter/lambda-invoke-appsync/assets/5106417/bb405643-4956-4aeb-a73d-bdf1e8b8e641">
+
+From there, verify the logs:
+
+<img width="1598" alt="image" src="https://github.com/focusOtter/lambda-invoke-appsync/assets/5106417/83947b38-3c2d-4fd2-b163-57140cea3f4d">
+
+
 
 ## Contributions
 
