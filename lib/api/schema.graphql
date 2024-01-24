@@ -1,0 +1,7 @@
+type Query {
+	listMessages: [String] @aws_iam
+}
+
+type Mutation {
+	broadcastMessage(msg: String): String! @aws_iam
+}
